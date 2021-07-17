@@ -8,13 +8,14 @@ import { Component, OnInit } from '@angular/core';
 export class ParentComponent implements OnInit {
   name = 'Angular';
   parent = 10;
-  parentCount = 0;
+  count = 0;
   ngOnInit(){
 
   }
 
-  displayCounter(count:any){
-    this.parentCount = count;
+  displayCounter(event:any){
+    console.log(event);
+    this.count++;
   }
 }
 

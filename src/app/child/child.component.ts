@@ -7,18 +7,16 @@ import {Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 })
 export class ChildComponent implements OnInit {
 
-  @Input() parentCount:number | undefined;
-  @Output() valueChange = new EventEmitter();
-  counter = 0;
+  @Input() parentCount?:number;
+  @Output() valueChange = new EventEmitter<string>();
   constructor() { }
 
   ngOnInit() {
-
+    console.log(this.parentCount)
   }
 
   valueChanged(){
-    this.counter += 1;
-    this.valueChange.emit(this.counter);
+    this.valueChange.emit('increment');
   }
 
 }
